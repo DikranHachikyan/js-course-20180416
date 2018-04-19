@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script type="text/javascript">
+        //1. декларация на променлива
+        var visitorName = '';
+
+        //2. питаме посетителя как се казва
+        visitorName = window.prompt('Как се казвате?');
+
+        //2.1 проверяваме какво е въвел посетителя
+
+        if( visitorName === null || visitorName === ''){
+            visitorName = 'гост';
+            //visitorName += ' или посетител';
+        }//if visitorName == null
+        else{
+            visitorName = '<em style="color:red">'+visitorName+'</em>';
+        }        
+
+        //3. извеждаме поздрав
+        document.write('<h1>Здравей ' + visitorName + '!</h1>');
+        
+
+    </script>
+</head>
+<body>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eos quia, non ut expedita rem neque totam accusantium at dignissimos reiciendis aliquid repudiandae placeat perferendis quo eum delectus magnam ea mollitia.
+    </p>
+    <noscript>
+        Моля, разрешете изпълнението на JS за да ...
+    </noscript>
+</body>
+</html>

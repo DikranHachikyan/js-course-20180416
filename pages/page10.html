@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script type="text/javascript">
+        //1. декларация на функция
+        var msgText = 'Проверете въведените данни!';
+        var alertText;
+
+        function showMessage(text, n){
+            if( n < 1 || n > 6 ){
+                console.log('Невалидна стойност за n:' + n);
+                n = 4;
+            }
+
+            if( typeof text !== 'string' ){
+                console.log('Невалидна стойност за text:' + text);
+                text = 'Empty message';
+            }
+            document.write('<h' + n + '>' + text + '</h' + n + '>');
+        }
+
+        //2. извикваме функцията
+        showMessage('Продуктът е изчерпан', 3);
+        showMessage('Успешен вход в системата!', 12);
+        showMessage(msgText, 4);
+        showMessage(alertText, 4);
+    </script>
+</head>
+<body>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eos quia, non ut expedita rem neque totam accusantium at dignissimos reiciendis aliquid repudiandae placeat perferendis quo eum delectus magnam ea mollitia.
+    </p>
+    <noscript>
+        Моля, разрешете изпълнението на JS за да ...
+    </noscript>
+</body>
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        li a {
+            text-decoration: none;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        li img{ /*TRouBL*/
+            margin: 0 5px ;
+        }
+    </style>
+</head>
+<body>
+    <h2></h2>
+    <ul>
+        <li> <a href="http://no.com/movie.mp4">Movie</a></li>
+        <li><a href="http://no.com/jquery-tutrial.pdf">jQuery Tutorial</a></li>
+        <li><a href="http://no.com/mycv.doc">CV</a></li>
+        <li><a href="http://no.com/audio.mp3">Audio Book</a></li>
+    </ul>
+
+    <p></p>
+    <noscript>
+        Моля, разрешете изпълнението на JS за да ...
+    </noscript>
+    
+    <!-- Неблокиращо включване -->
+    <script src="../js/jquery-3.3.1.min.js"></script>
+
+    <script>
+        
+        $(document).ready(function(){
+           $('h2').html('Resource <em>Files</em>');
+
+           $('li a[href$="mp4"]')
+                        .before('<img src="../images/video-x-generic.png"/>')
+                        .css('border','1px solid red')
+                        .css('background-color','yellow');
+
+           $('li a[href$="mp3"]').before('<img src="../images/audio-x-generic.png"/>');
+           $('li a[href$="pdf"]').before('<img src="../images/package-x-generic.png"/>');
+           $('li a[href$="doc"]').before('<img src="../images/x-office-document.png"/>');
+
+           $('p').text('Lorem <em>ipsum dolor</em> sit <strong>amet</strong>, consectetur');
+        });//on document ready
+    </script>
+</body>
+</html>

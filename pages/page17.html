@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+    </style>
+</head>
+<body>
+    <input type="button" id="btn" value="Click Me!" >
+    <hr>
+    <label>
+        <input type="checkbox" id="agree">Съгласен съм с ... 
+    </label>
+    <label>
+        <input type="checkbox" id="off">Off 
+    </label>
+    <noscript>
+        Моля, разрешете изпълнението на JS за да ...
+    </noscript>
+    
+    <!-- Неблокиращо включване -->
+    <script src="../js/jquery-3.3.1.min.js"></script>
+
+    <script>
+        
+        $(document).ready(function(){
+           $('#btn').on('click', function(){
+                window.alert('Click Event!');
+           });//on btn click
+           $('#agree')
+                .one('click',function(){
+                    window.alert('Click Event');
+                })//on #agree click
+                .on('change',function(){
+                    window.alert('Change Event')
+                });//on #agree change
+
+            $('#off').on('change', function(){
+                $('#btn').off('click');
+            }); //on #off change
+        });//on document ready
+    </script>
+</body>
+</html>

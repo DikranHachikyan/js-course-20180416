@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <input type="button" value="Click Me!" id="btn">
+    <p id="intro">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestias animi, magnam sequi sed, rem obcaecati quo esse et, qui quisquam sapiente accusamus necessitatibus nobis, mollitia expedita. Optio odit tenetur minima.
+    </p>
+    <p class="txt">Laudantium reprehenderit, ipsum officia, quas perferendis excepturi ratione placeat blanditiis voluptates, minima porro debitis quibusdam. Ducimus, ut? Fuga cumque, earum eligendi, laborum modi, minus sit ducimus libero soluta vitae at.
+    </p>
+    <div>Nihil quod reiciendis ratione voluptas dolore, enim exercitationem fuga excepturi impedit, quos, quasi labore quisquam adipisci et soluta nostrum consequatur tempora. Pariatur, quidem provident dolorum quos voluptas voluptates voluptate praesentium!
+    </div>
+    <p>Dolorum consequatur, ducimus aliquam laboriosam incidunt voluptatum ipsa enim quibusdam! Recusandae neque omnis velit unde quisquam consectetur ut, dicta aliquam alias inventore quas mollitia impedit illum nihil, quibusdam quos nulla!
+    </p>
+    <p>Praesentium, impedit, totam. Sit dignissimos odit illum necessitatibus facilis blanditiis, alias libero, aspernatur asperiores quidem doloremque sed perferendis minima debitis. Sapiente, eum vero sed laboriosam atque provident. Quas, dignissimos, maxime.
+    </p>
+
+    <noscript>
+        Моля, разрешете изпълнението на JS за да ...
+    </noscript>
+    
+    <!-- Неблокиращо включване -->
+    <script src="../js/jquery-3.3.1.min.js"></script>
+
+    <script>
+       
+        $(document).ready(function(){
+           $('p').css('background-color','#ccc');
+
+           $('div + p').css('border','1px solid red');
+
+           $('#btn').css('border','none');
+        });//on document ready
+    </script>
+</body>
+</html>

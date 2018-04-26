@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+    #gallery li+li {
+        display: none;
+    }
+
+    ul#gallery {
+        list-style: none;
+    }
+    </style>
+</head>
+<body>
+    <ul id="gallery">
+        <li><img src="../pics-large/pic1-320x240.jpg"></li>
+        <li><img src="../pics-large/pic2-320x240.jpg""></li>
+        <li><img src="../pics-large/pic3-320x240.jpg""></li>
+        <li><img src="../pics-large/pic4-320x240.jpg""></li>
+        <li><img src="../pics-large/pic5-320x240.jpg""></li>
+    </ul>
+    <div>
+        <input type="button" id="prv" value="<<">
+        <input type="button" id="nxt" value=">>">
+    </div>
+    <noscript>
+        Моля, разрешете изпълнението на JS за да ...
+    </noscript>
+    
+    <!-- Неблокиращо включване -->
+    <script src="../js/jquery-3.3.1.min.js"></script>
+
+    <script>
+        
+        $(document).ready(function(){
+           $('#nxt').click(function(){
+                $('#gallery li:first-child').appendTo($('#gallery'));
+                //$('#gallery li:first-child').append($('#gallery'));
+                
+           });//button #nxt click
+
+           //button #prv за домашно
+        });//on document ready
+    </script>
+</body>
+</html>

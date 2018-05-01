@@ -16,13 +16,14 @@
 <body>
     <ul id="gallery">
         <li><img src="../pics-large/pic1-320x240.jpg"></li>
+        <li><img src="../pics-large/pic2-320x240.jpg""></li>
         <li><img src="../pics-large/pic3-320x240.jpg""></li>
         <li><img src="../pics-large/pic4-320x240.jpg""></li>
-        <li><img src="../pics-large/pic2-320x240.jpg""></li>
         <li><img src="../pics-large/pic5-320x240.jpg""></li>
     </ul>
     <div>
         <input type="button" id="prv" value="<<">
+        <input type="button" id="slide" value="Auto">
         <input type="button" id="nxt" value=">>">
     </div>
     <noscript>
@@ -35,14 +36,34 @@
     <script>
         
         $(document).ready(function(){
+           var intervalID = 0;
+           var buttonLabel = ''; 
            $('#nxt').click(function(){
-                $('#gallery li:first-child').appendTo($('#gallery'));
-                //$('#gallery li:first-child').append($('#gallery'));
-                
+                goNext();
            });//button #nxt click
+
+           $('#slide').click(function(){
+                if( intervalID > 0 ){
+                    clearInterval(intervalID);
+                    intervalID = 0;
+                    buttonLabel = 'Auto'
+                }
+                else {
+                    intervalID = setInterval( goNext , 2000);
+                    buttonLabel = 'Stop';
+                }
+
+                $(this).val(buttonLabel);
+                console.log('Interval ID:', intervalID);
+           });// on btn slide click
 
            //button #prv за домашно
         });//on document ready
+
+        function goNext(){
+            
+            $('#gallery li:first-child').appendTo($('#gallery'));
+        }
     </script>
 </body>
 </html>

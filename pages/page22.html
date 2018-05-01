@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        ul#gallery li {
+            display: inline-block;
+            margin-right: 5px;
+            cursor: pointer;
+        }
+
+        ul#gallery {
+            list-style: none;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <img src="../pics-large/pic1-320x240.jpg" alt="" id="large-image">
+    </div>
+    <ul id="gallery">
+        <li>
+            <img src="../pics-small/pic1.jpg" data-large="pic1-320x240.jpg">
+        </li>
+        <li><img src="../pics-small/pic2.jpg" data-large="pic2-320x240.jpg"></li>
+        <li><img src="../pics-small/pic3.jpg" data-large="pic3-320x240.jpg"></li>
+        <li><img src="../pics-small/pic4.jpg" data-large="pic4-320x240.jpg"></li>
+        <li><img src="../pics-small/pic5.jpg" data-large="pic5-320x240.jpg"></li>
+    </ul>
+    
+    <noscript>
+        Моля, разрешете изпълнението на JS за да ...
+    </noscript>
+    
+    <!-- Неблокиращо включване -->
+    <script src="../js/jquery-3.3.1.min.js"></script>
+
+    <script>
+        
+        $(document).ready(function(){
+           var defaultImage = "../pics-large/pic1-320x240.jpg";
+           var path = "../pics-large/";
+           // 
+           $('#gallery li img').mouseover(function(){
+                var largeImage = $(this).data('large');
+                $('#large-image').attr('src', path + largeImage);
+           });//on mouse over
+
+           $('#gallery li img').mouseout(function(){
+                $('#large-image').attr('src',defaultImage);
+           }); //on mouse out
+        });//on document ready
+    </script>
+</body>
+</html>

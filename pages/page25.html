@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+
+    </style>
+</head>
+<body>
+    <div id="gallery">
+        <h2>Title</h2>
+        <a href="#" title="">
+            <img src="../pics-large/pic1-320x240.jpg" alt="">
+        </a>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda similique dolorem aperiam accusantium deleniti, recusandae, dolorum provident commodi, voluptas repellat facilis. Quis perspiciatis culpa magnam, ipsa maiores deleniti amet corporis.
+        </p>
+        <p></p>
+    </div>
+    <noscript>
+        Моля, разрешете изпълнението на JS за да ...
+    </noscript>
+    
+    <!-- Неблокиращо включване -->
+    <script src="../js/jquery-3.3.1.min.js"></script>
+
+    <script>
+        
+        $(document).ready(function(){
+          var item = {
+                    "url": "http://www.teara.govt.nz/en/video/44471/neil-dawsons-chalice-cathedral-square-christchurch",
+                    "title": "Millennium Monument",
+                    "thumbnail": "chch-millennium-monument72x56.png",
+                    "alt": "Millennium Monument",
+                    "shortinfo": "Neil Dawson's magnificent Chalice sculpture is located in Christchurch's Cathedral Square.Chalice celebrates the new millennium and the 150th Anniversary of the founding of Christchurch",
+                    "src": "chch-millennium-monument320x240.png"
+                    };
+
+           var gallery = $('#gallery');
+           var path = '../pics-large/';
+
+           gallery.find('h2').html( item.title);
+           gallery.find('a').attr({ 
+                                      'href' : item.url
+                                    , 'title': item.title
+                                 });
+           gallery.find('img').attr({
+                                       'src': path + item.src
+                                     , 'alt': item.alt
+                                  });
+           gallery.find('p').html(item.shortinfo);          
+        });//on document ready
+    </script>
+</body>
+</html>

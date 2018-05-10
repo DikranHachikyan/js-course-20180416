@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+
+    </style>
+</head>
+<body>
+    <h2>FAQ</h2>
+    <dl>
+      <dt><a href="#">Lorem ipsum dolor sit amet?</a></dt>
+      <dd>
+        Consectetur adipisicing elit. Possimus molestias distinctio fuga iure blanditiis hic libero consequatur doloribus veritatis, tempora, cum saepe commodi accusantium dignissimos minus facere ad perspiciatis optio!
+      </dd>
+      <dt><a href="#">Consectetur adipisicing elit?</a></dt>
+      <dd>
+        Nemo omnis sit deleniti eaque obcaecati nesciunt sed mollitia dolor quibusdam, quam beatae corporis similique et nihil atque accusamus laboriosam magni ducimus.
+      </dd>
+      <dt><a href="#">Quo officiis reiciendis aliquam?</a></dt>
+      <dd>
+        Impedit, necessitatibus architecto repellat doloribus animi in quidem provident voluptatibus, dolore vitae, tempore asperiores quas porro. Magni, at.
+      </dd>
+      <dt><a href="#">Quidem reiciendis numquam?</a></dt>
+      <dd>
+        Rem ipsa quo minus ab ut, impedit consequuntur voluptate officiis illo error sapiente voluptates, recusandae quis. Dolores, vel, corporis!
+      </dd>
+      <dt><a href="#">Quisquam repudiandae recusandae veniam?</a></dt>
+      <dd>
+        Eligendi praesentium veritatis ipsum vero, nemo iste delectus nisi! Autem aut, suscipit, perferendis error minus nisi dolore illo.
+      </dd>
+    </dl>
+    <noscript>
+        Моля, разрешете изпълнението на JS за да ...
+    </noscript>
+    
+    <!-- Неблокиращо включване -->
+    <script src="../js/jquery-3.3.1.min.js"></script>
+    <script src="../js/images.js"></script>
+    <script>
+        $(document).ready(function(){
+          $('dd').hide();
+
+          $('dt').click(function(){
+            $('dd').hide();
+            //$(this).next().fadeToggle(1000);
+            $(this).next().slideToggle(1000);
+          });  
+        });//on document ready
+    </script>
+</body>
+</html>
